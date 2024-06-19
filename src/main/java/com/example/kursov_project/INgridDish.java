@@ -6,7 +6,7 @@ public class INgridDish {
     private int dish_id;
     private int count;
 
-    public INgridDish(String ingridient_name, int dish_id, int count){
+    public INgridDish(int id, String ingridient_name, int dish_id, int count){
         this.ingridient_name = ingridient_name;
         this.dish_id =dish_id;
         this.count = count;

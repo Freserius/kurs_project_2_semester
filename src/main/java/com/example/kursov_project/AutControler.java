@@ -64,13 +64,13 @@ public class AutControler {
         Parent root;
         Button button = (Button) event.getSource(); // Получаем кнопку, которая произвела нажатие
         String newWindow = "";
-        System.out.println(authorize());
 
         // Проверяем, какая кнопка была нажата
         // и ставим разные окна в зависимости от этого
         if (button == authorization && authorize()) {// Попытка авторизации
             newWindow = "main.fxml";
-            IngrifControler.setUser(user);
+            IngridControler.setUser(user);
+            user = new User();
         } else {
             return; // Если не получилось авторизоваться - метод заканчивает работу (во избежание ошибок в консоли)
         }
