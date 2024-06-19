@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="300.0" prefWidth="324.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="">
+   <children>
+      <PasswordField fx:id="passField" layoutX="70.0" layoutY="149.0" prefHeight="26.0" prefWidth="200.0" promptText="Password" />
+      <TextField fx:id="loginField" layoutX="70.0" layoutY="109.0" prefHeight="26.0" prefWidth="200.0" promptText="Login" />
+      <Button fx:id="authorization" layoutX="81.0" layoutY="219.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="172.0" text="Authorization" />
+      <Label layoutX="12.0" layoutY="44.0" prefHeight="35.0" prefWidth="325.0" text="RestoranSystem Authorization">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

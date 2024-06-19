@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="387.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursov_project.IngrDishControler">
+   <children>
+      <TableView layoutX="38.0" layoutY="69.0" prefHeight="225.0" prefWidth="303.0">
+        <columns>
+          <TableColumn prefWidth="45.60000991821289" text="id" />
+          <TableColumn prefWidth="95.19998168945312" text="ingridient_name" />
+            <TableColumn prefWidth="77.4000244140625" text="dish_name" />
+            <TableColumn prefWidth="84.19999694824219" text="ingridient_count" />
+        </columns>
+      </TableView>
+      <TextField layoutX="38.0" layoutY="44.0" prefHeight="26.0" prefWidth="48.0" />
+      <TextField layoutX="86.0" layoutY="45.0" prefHeight="26.0" prefWidth="93.0" />
+      <TextField layoutX="180.0" layoutY="45.0" prefHeight="26.0" prefWidth="79.0" />
+      <TextField layoutX="259.0" layoutY="46.0" prefHeight="26.0" prefWidth="79.0" />
+      <Label layoutX="88.0" layoutY="-18.0" prefHeight="80.0" prefWidth="171.0" text="IngridientsDishs">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="36.0" layoutY="311.0" mnemonicParsing="false" text="Add" />
+      <Button layoutX="289.0" layoutY="311.0" mnemonicParsing="false" text="Deleta" />
+      <Button layoutX="12.0" layoutY="354.0" mnemonicParsing="false" text="toIngridients" />
+      <Button layoutX="315.0" layoutY="354.0" mnemonicParsing="false" text="toOfficiants" />
+   </children>
+</AnchorPane>

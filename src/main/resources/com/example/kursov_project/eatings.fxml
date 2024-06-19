@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursov_project.Eatings">
+   <children>
+      <Button layoutX="40.0" layoutY="351.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="66.0" text="toDishs" />
+      <Button layoutX="497.0" layoutY="351.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="66.0" text="toIngridints" />
+      <TableView layoutX="35.0" layoutY="100.0" prefHeight="200.0" prefWidth="527.0">
+        <columns>
+          <TableColumn prefWidth="62.200016021728516" text="table_id" />
+          <TableColumn prefWidth="73.80001831054688" text="inn" />
+            <TableColumn prefWidth="81.4000244140625" text="officiant_id " />
+            <TableColumn prefWidth="76.80000305175781" text="dish_id" />
+            <TableColumn prefWidth="67.0" text="date_" />
+            <TableColumn prefWidth="86.39999999999998" text="tame_begin" />
+            <TableColumn prefWidth="75.0" text="time_end" />
+        </columns>
+      </TableView>
+      <TextField layoutX="34.0" layoutY="75.0" prefHeight="26.0" prefWidth="66.0" />
+      <TextField layoutX="101.0" layoutY="76.0" prefHeight="26.0" prefWidth="66.0" />
+      <TextField layoutX="168.0" layoutY="76.0" prefHeight="26.0" prefWidth="85.0" />
+      <TextField layoutX="254.0" layoutY="77.0" prefHeight="26.0" prefWidth="79.0" />
+      <TextField layoutX="333.0" layoutY="78.0" prefHeight="26.0" prefWidth="66.0" />
+      <TextField layoutX="400.0" layoutY="77.0" prefHeight="26.0" prefWidth="86.0" />
+      <Button layoutX="142.0" layoutY="316.0" mnemonicParsing="false" text="Add" />
+      <Button layoutX="404.0" layoutY="316.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="66.0" text="Deleta" />
+      <Label layoutX="215.0" layoutY="36.0" prefHeight="35.0" prefWidth="102.0" text="Eatings">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField layoutX="488.0" layoutY="79.0" prefHeight="26.0" prefWidth="73.0" />
+   </children>
+</AnchorPane>
