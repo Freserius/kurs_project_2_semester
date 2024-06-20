@@ -78,7 +78,7 @@ public class IngridControler implements Initializable {
        toEatingsButton.setOnAction(actionEvent -> {
            Stage stage;
            Parent root;
-           String newWindow = "dishs.fxml";
+           String newWindow = "eatings.fxml";
            stage = (Stage) toIngridientsDishes.getScene().getWindow(); // получаем окно этой кнопки
            try {
                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(newWindow)));

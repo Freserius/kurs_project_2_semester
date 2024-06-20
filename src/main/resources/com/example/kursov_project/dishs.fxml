@@ -11,17 +11,19 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TableView layoutX="44.0" layoutY="96.0" prefHeight="192.0" prefWidth="150.0">
+      <TableView fx:id="dishsTable" layoutX="35.0" layoutY="97.0" prefHeight="192.0" prefWidth="159.0">
         <columns>
-          <TableColumn prefWidth="71.00000381469727" text="name" />
-          <TableColumn prefWidth="80.20001220703125" text="id" />
+          <TableColumn fx:id="nameColum" prefWidth="76.19998168945312" text="name" />
+          <TableColumn fx:id="adColum" prefWidth="75.80004119873047" text="id" />
         </columns>
       </TableView>
-      <TextField layoutX="44.0" layoutY="71.0" prefHeight="26.0" prefWidth="73.0" />
-      <TextField layoutX="118.0" layoutY="72.0" prefHeight="26.0" prefWidth="66.0" />
-      <Button layoutX="18.0" layoutY="352.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="52.0" text="toClients" />
-      <Button layoutX="147.0" layoutY="349.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="52.0" text="toEatings" />
-      <Button layoutX="44.0" layoutY="309.0" mnemonicParsing="false" text="Add" />
-      <Button layoutX="131.0" layoutY="309.0" mnemonicParsing="false" text="Deleta" />
+      <TextField fx:id="nameField" layoutX="36.0" layoutY="71.0" prefHeight="26.0" prefWidth="74.0" />
+      <TextField fx:id="idField" layoutX="115.0" layoutY="71.0" prefHeight="26.0" prefWidth="74.0" />
+      <Button fx:id="toClientsButton" layoutX="18.0" layoutY="352.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="52.0" text="toClients" />
+      <Button fx:id="toEatingsButton" layoutX="163.0" layoutY="352.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="52.0" text="toEatings" />
+      <Button fx:id="addButton" layoutX="35.0" layoutY="296.0" mnemonicParsing="false" text="Add" />
+      <Button fx:id="delateButton" layoutX="144.0" layoutY="296.0" mnemonicParsing="false" text="Deleta" />
+      <Button fx:id="exitButton" layoutX="176.0" layoutY="32.0" mnemonicParsing="false" text="Exit" />
+      <Button fx:id="updateButton" layoutX="83.0" layoutY="296.0" mnemonicParsing="false" text="Update" />
    </children>
 </AnchorPane>

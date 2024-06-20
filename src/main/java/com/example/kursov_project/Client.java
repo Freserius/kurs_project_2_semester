@@ -4,6 +4,11 @@ public class Client {
  private int inn;
  private String name;
  private String address;
+ public Client(int inn, String name, String address){
+  this.inn = inn;
+  this.name = name;
+  this.address = address;
+ }
 
  public String getAddress() {
   return address;

@@ -4,26 +4,28 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="314.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursov_project.Clients">
+<AnchorPane prefHeight="400.0" prefWidth="314.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursov_project.ClientsController">
    <children>
-      <TableView layoutX="39.0" layoutY="93.0" prefHeight="197.0" prefWidth="226.0">
+      <TableView fx:id="clientsTable" layoutX="39.0" layoutY="93.0" prefHeight="197.0" prefWidth="226.0">
         <columns>
-          <TableColumn prefWidth="70.20001602172852" text="inn" />
-          <TableColumn prefWidth="71.80001831054688" text="name" />
-            <TableColumn prefWidth="84.19996643066406" text="address" />
+          <TableColumn fx:id="innColum" prefWidth="70.20001602172852" text="inn" />
+          <TableColumn fx:id="nameColum" prefWidth="71.80001831054688" text="name" />
+            <TableColumn fx:id="addressColum" prefWidth="84.19996643066406" text="address" />
         </columns>
       </TableView>
-      <TextField layoutX="39.0" layoutY="68.0" prefHeight="26.0" prefWidth="72.0" />
-      <TextField layoutX="111.0" layoutY="68.0" prefHeight="26.0" prefWidth="72.0" />
-      <TextField layoutX="183.0" layoutY="69.0" prefHeight="26.0" prefWidth="84.0" />
-      <Button layoutX="39.0" layoutY="304.0" mnemonicParsing="false" text="Add" />
-      <Button layoutX="214.0" layoutY="304.0" mnemonicParsing="false" text="Deleta" />
+      <TextField fx:id="innField" layoutX="39.0" layoutY="68.0" prefHeight="26.0" prefWidth="72.0" />
+      <TextField fx:id="nameField" layoutX="111.0" layoutY="68.0" prefHeight="26.0" prefWidth="72.0" />
+      <TextField fx:id="addressField" layoutX="183.0" layoutY="69.0" prefHeight="26.0" prefWidth="84.0" />
+      <Button fx:id="addButton" layoutX="39.0" layoutY="304.0" mnemonicParsing="false" text="Add" />
+      <Button fx:id="delateButton" layoutX="214.0" layoutY="304.0" mnemonicParsing="false" text="Deleta" />
       <Label layoutX="109.0" layoutY="19.0" prefHeight="47.0" prefWidth="72.0" text="Clients">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Button layoutX="14.0" layoutY="352.0" mnemonicParsing="false" text="toTables" />
-      <Button layoutX="239.0" layoutY="352.0" mnemonicParsing="false" text="toDishs" />
+      <Button fx:id="toTablesButton" layoutX="14.0" layoutY="352.0" mnemonicParsing="false" text="toTables" />
+      <Button fx:id="toDishButton" layoutX="239.0" layoutY="352.0" mnemonicParsing="false" text="toDishs" />
+      <Button fx:id="updateButton" layoutX="119.0" layoutY="304.0" mnemonicParsing="false" text="Update" />
+      <Button fx:id="exitButton" layoutX="225.0" layoutY="19.0" mnemonicParsing="false" text="Exit" />
    </children>
 </AnchorPane>

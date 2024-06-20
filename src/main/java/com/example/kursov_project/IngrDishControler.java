@@ -82,13 +82,35 @@ public class IngrDishControler implements Initializable {
             data.set(data.indexOf(ingridientDishTable.getSelectionModel().getSelectedItem()),ingridient);
             bdHandler.updarinfIngridientDish(ingridientDishTable.getSelectionModel().getSelectedItem(),ingridient);
         });
+        }else {
+            addButton.setDisable(!user.isAdmin());
+            delateButton.setDisable(!user.isAdmin());
+            updateButton.setDisable(!user.isAdmin());
+            idField.setDisable(!user.isAdmin());
+            ingridNameField.setDisable(!user.isAdmin());
+            dishIdField.setDisable(!user.isAdmin());
+            ingridCountField.setDisable(!user.isAdmin());
+        }
         toOfficiantsButton.setOnAction(actionEvent -> {
-
+            Stage stage;
+            Parent root;
+            String newWindow = "officiants.fxml";
+            OfficiantsController.setUser(user);
+            stage = (Stage) toOfficiantsButton.getScene().getWindow(); // получаем окно этой кнопки
+            try {
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(newWindow)));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            Scene scene = new Scene(root); // Получаем новое окно
+            stage.setScene(scene); // Ставим новое окно вместо старого
+            stage.show();
         });
         toIngridientsButton.setOnAction(actionEvent -> {
             Stage stage;
             Parent root;
             String newWindow = "main.fxml";
+            IngridControler.setUser(user);
             stage = (Stage) toIngridientsButton.getScene().getWindow(); // получаем окно этой кнопки
             try {
                 root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(newWindow)));
@@ -111,17 +133,7 @@ public class IngrDishControler implements Initializable {
             }
             Scene scene = new Scene(root); // Получаем новое окно
             stage.setScene(scene); // Ставим новое окно вместо старого
-            stage.show();
-        });
-        }else {
-            addButton.setDisable(!user.isAdmin());
-            delateButton.setDisable(!user.isAdmin());
-            updateButton.setDisable(!user.isAdmin());
-            idField.setDisable(!user.isAdmin());
-            ingridNameField.setDisable(!user.isAdmin());
-            dishIdField.setDisable(!user.isAdmin());
-            ingridCountField.setDisable(!user.isAdmin());
-        }
+            stage.show();});
 
         addInformationAboutIngrDish();
         idColum.setCellValueFactory(new PropertyValueFactory<>("id"));
