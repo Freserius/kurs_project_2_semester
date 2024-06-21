@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="331.0" prefWidth="329.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursov_project.RegestrationControler">
+   <children>
+      <Button fx:id="registrairButton" layoutX="130.0" layoutY="242.0" mnemonicParsing="false" text="Registrait" />
+      <Button fx:id="changePasswordButton" layoutX="107.0" layoutY="285.0" mnemonicParsing="false" text="Change password" />
+      <Label layoutX="97.0" layoutY="39.0" prefHeight="35.0" prefWidth="132.0" text="Regisrtation">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="passwordField" layoutX="90.0" layoutY="140.0" promptText="password" />
+      <TextField fx:id="loginField" layoutX="90.0" layoutY="97.0" promptText="login" />
+      <PasswordField fx:id="repPasswordField" layoutX="88.0" layoutY="184.0" promptText="repitPassword" />
+      <Button fx:id="backButton" layoutX="248.0" layoutY="14.0" mnemonicParsing="false" text="Back" />
+   </children>
+</AnchorPane>

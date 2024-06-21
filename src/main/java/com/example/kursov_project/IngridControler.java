@@ -79,6 +79,7 @@ public class IngridControler implements Initializable {
            Stage stage;
            Parent root;
            String newWindow = "eatings.fxml";
+           EatingsControler.setUser(user);
            stage = (Stage) toIngridientsDishes.getScene().getWindow(); // получаем окно этой кнопки
            try {
                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(newWindow)));
@@ -105,19 +106,25 @@ public class IngridControler implements Initializable {
        });
        if (user.isAdmin()) {
            addButon.setOnAction(actionEvent -> {
+               try {
                    Ingridient ingridient = new Ingridient(nameField.getText(), unitField.getText(), countField.getText());
                    data.add(ingridient);
                    bdHandler.insertIngridient(ingridient);
+               }catch (Exception ignored){}
            });
            deleatButton.setOnAction(actionEvent -> {
+               try {
                    Ingridient ingridient = ingridientTable.getSelectionModel().getSelectedItem();
                    data.remove(ingridient);
                    bdHandler.deleatIngridient(ingridient);
+               }catch (Exception ingnored){}
            });
            updateButton.setOnAction(actionEvent -> {
-               Ingridient ingridient = new Ingridient(nameField.getText(),unitField.getText(), countField.getText());
-               data.set(data.indexOf(ingridientTable.getSelectionModel().getSelectedItem()),ingridient);
-               bdHandler.updateIngridient(ingridientTable.getSelectionModel().getSelectedItem(),ingridient);
+               try {
+                   Ingridient ingridient = new Ingridient(nameField.getText(), unitField.getText(), countField.getText());
+                   data.set(data.indexOf(ingridientTable.getSelectionModel().getSelectedItem()), ingridient);
+                   bdHandler.updateIngridient(ingridientTable.getSelectionModel().getSelectedItem(), ingridient);
+               }catch (Exception e){}
            });
        }else {
            deleatButton.setDisable(true);

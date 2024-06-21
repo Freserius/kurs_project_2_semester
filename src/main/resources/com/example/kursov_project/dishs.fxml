@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="234.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursov_project.Dishs">
+<AnchorPane prefHeight="400.0" prefWidth="234.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursov_project.DishsController">
    <children>
       <Label layoutX="78.0" layoutY="14.0" prefHeight="35.0" prefWidth="65.0" text="Dishs">
          <font>
@@ -14,7 +14,7 @@
       <TableView fx:id="dishsTable" layoutX="35.0" layoutY="97.0" prefHeight="192.0" prefWidth="159.0">
         <columns>
           <TableColumn fx:id="nameColum" prefWidth="76.19998168945312" text="name" />
-          <TableColumn fx:id="adColum" prefWidth="75.80004119873047" text="id" />
+          <TableColumn fx:id="idColum" prefWidth="75.80004119873047" text="id" />
         </columns>
       </TableView>
       <TextField fx:id="nameField" layoutX="36.0" layoutY="71.0" prefHeight="26.0" prefWidth="74.0" />

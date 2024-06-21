@@ -68,19 +68,25 @@ public class IngrDishControler implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if (user.isAdmin()){
         addButton.setOnAction(actionEvent -> {
-                INgridDish ingridient = new INgridDish(Integer.parseInt(idField.getText()),ingridNameField.getText(), Integer.parseInt(dishIdField.getText()), Integer.parseInt(ingridCountField.getText()));
+            try {
+                INgridDish ingridient = new INgridDish(Integer.parseInt(idField.getText()), ingridNameField.getText(), Integer.parseInt(dishIdField.getText()), Integer.parseInt(ingridCountField.getText()));
                 data.add(ingridient);
                 bdHandler.insertIngridientsDish(ingridient);
+            }catch (Exception e){}
         });
         delateButton.setOnAction(actionEvent -> {
-                INgridDish ingridient = ingridientDishTable.getSelectionModel().getSelectedItem();
-                data.remove(ingridient);
-                bdHandler.deleatIngridientsDish(ingridient);
+                try {
+                    INgridDish ingridient = ingridientDishTable.getSelectionModel().getSelectedItem();
+                    data.remove(ingridient);
+                    bdHandler.deleatIngridientsDish(ingridient);
+                }catch (Exception e){}
         });
         updateButton.setOnAction(actionEvent -> {
-            INgridDish ingridient = new INgridDish(Integer.parseInt(idField.getText()),ingridNameField.getText(), Integer.parseInt(dishIdField.getText()), Integer.parseInt(ingridCountField.getText()));
-            data.set(data.indexOf(ingridientDishTable.getSelectionModel().getSelectedItem()),ingridient);
-            bdHandler.updarinfIngridientDish(ingridientDishTable.getSelectionModel().getSelectedItem(),ingridient);
+            try {
+                INgridDish ingridient = new INgridDish(Integer.parseInt(idField.getText()), ingridNameField.getText(), Integer.parseInt(dishIdField.getText()), Integer.parseInt(ingridCountField.getText()));
+                data.set(data.indexOf(ingridientDishTable.getSelectionModel().getSelectedItem()), ingridient);
+                bdHandler.updarinfIngridientDish(ingridientDishTable.getSelectionModel().getSelectedItem(), ingridient);
+            }catch (Exception e){}
         });
         }else {
             addButton.setDisable(!user.isAdmin());
@@ -138,8 +144,8 @@ public class IngrDishControler implements Initializable {
         addInformationAboutIngrDish();
         idColum.setCellValueFactory(new PropertyValueFactory<>("id"));
         ingridDishColum.setCellValueFactory(new PropertyValueFactory<>("ingridient_name"));
-        dishIdColum.setCellValueFactory(new PropertyValueFactory<>("id"));
-        ingridCountColum.setCellValueFactory(new PropertyValueFactory<>("count_"));
+        dishIdColum.setCellValueFactory(new PropertyValueFactory<>("dish_id"));
+        ingridCountColum.setCellValueFactory(new PropertyValueFactory<>("count"));
         ingridientDishTable.setItems(data);
     }
 

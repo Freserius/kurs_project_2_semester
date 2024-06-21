@@ -18,7 +18,7 @@
       <TextField fx:id="ingridNameField" layoutX="86.0" layoutY="45.0" prefHeight="26.0" prefWidth="93.0" />
       <TextField fx:id="dishIdField" layoutX="180.0" layoutY="45.0" prefHeight="26.0" prefWidth="79.0" />
       <TextField fx:id="ingridCountField" layoutX="259.0" layoutY="46.0" prefHeight="26.0" prefWidth="79.0" />
-      <Label layoutX="88.0" layoutY="-18.0" prefHeight="80.0" prefWidth="171.0" text="IngridientsDishs">
+      <Label layoutX="94.0" layoutY="7.0" prefHeight="40.0" prefWidth="171.0" text="IngridientsDishs">
          <font>
             <Font size="24.0" />
          </font>

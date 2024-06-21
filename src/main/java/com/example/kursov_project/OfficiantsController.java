@@ -68,19 +68,25 @@ public class OfficiantsController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if (user.isAdmin()){
             addButton.setOnAction(actionEvent -> {
-                Officaant officaant = new Officaant(Integer.parseInt(idField.getText()),adressField.getText(),telephonField.getText(),nameField.getText());
-                data.add(officaant);
-                bdHandler.insertOfficiant(officaant);
+                try {
+                    Officaant officaant = new Officaant(Integer.parseInt(idField.getText()), adressField.getText(), telephonField.getText(), nameField.getText());
+                    data.add(officaant);
+                    bdHandler.insertOfficiant(officaant);
+                }catch (Exception e){}
             });
             DelateButton.setOnAction(actionEvent -> {
-                Officaant officaant = officiantsTable.getSelectionModel().getSelectedItem();
-                data.remove(officaant);
-                bdHandler.deleatOfficiant(officaant);
+                try {
+                    Officaant officaant = officiantsTable.getSelectionModel().getSelectedItem();
+                    data.remove(officaant);
+                    bdHandler.deleatOfficiant(officaant);
+                }catch (Exception e){}
             });
             updateButton.setOnAction(actionEvent -> {
-                Officaant officaant = new Officaant(Integer.parseInt(idField.getText()),adressField.getText(), telephonField.getText(), nameField.getText());
-                data.set(data.indexOf(officiantsTable.getSelectionModel().getSelectedItem()),officaant);
-                bdHandler.updateOfficiant(officaant);
+                try {
+                    Officaant officaant = new Officaant(Integer.parseInt(idField.getText()), adressField.getText(), telephonField.getText(), nameField.getText());
+                    data.set(data.indexOf(officiantsTable.getSelectionModel().getSelectedItem()), officaant);
+                    bdHandler.updateOfficiant(officaant);
+                }catch (Exception e){}
             });
 
         }else {

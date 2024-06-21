@@ -60,23 +60,27 @@ public class ClientsController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if (user.isAdmin()){
             addButton.setOnAction(actionEvent -> {
-                Client client = new Client(Integer.parseInt(innField.getText()),nameField.getText(), addressField.getText());
-                bdHandler.insertTable(client);
-                data.add(client);
+                try {
+                    Client client = new Client(Integer.parseInt(innField.getText()), nameField.getText(), addressField.getText());
+                    bdHandler.insertTable(client);
+                    data.add(client);
+                }catch (Exception e){}
 
             });
             delateButton.setOnAction(actionEvent -> {
-                Client client = clientsTable.getSelectionModel().getSelectedItem();
-                bdHandler.deleatClient(client);
-                data.remove(client);
+                try {
+                    Client client = clientsTable.getSelectionModel().getSelectedItem();
+                    bdHandler.deleatClient(client);
+                    data.remove(client);
+                }catch (Exception e){}
 
             });
             updateButton.setOnAction(actionEvent -> {
-                Client client = new Client(Integer.parseInt(innField.getText()),nameField.getText(), addressField.getText());
-                bdHandler.updateClient(client);
-                data.set(data.indexOf(clientsTable.getSelectionModel().getSelectedItem()),client);
-
-
+                try {
+                    Client client = new Client(Integer.parseInt(innField.getText()), nameField.getText(), addressField.getText());
+                    bdHandler.updateClient(client);
+                    data.set(data.indexOf(clientsTable.getSelectionModel().getSelectedItem()), client);
+                }catch (Exception e){}
             });
 
 
@@ -89,7 +93,19 @@ public class ClientsController implements Initializable {
             addressField.setDisable(!user.isAdmin());
         }
         toDishButton.setOnAction(actionEvent -> {
-
+            Stage stage;
+            Parent root;
+            String newWindow = "dishs.fxml";
+            DishsController.setUser(user);
+            stage = (Stage) toTablesButton.getScene().getWindow(); // получаем окно этой кнопки
+            try {
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(newWindow)));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            Scene scene = new Scene(root); // Получаем новое окно
+            stage.setScene(scene); // Ставим новое окно вместо старого
+            stage.show();
         });
 
         toTablesButton.setOnAction(actionEvent -> {

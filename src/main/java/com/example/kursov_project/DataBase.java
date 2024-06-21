@@ -24,7 +24,45 @@ public class DataBase {
 
         return connection;
     }
+    public ResultSet getUser(User user){
+        String geterUser = "SELECT * FROM `users` WHERE login = ?";
+        PreparedStatement prSt = null;
+        try {
+            prSt = getDBConnection().prepareStatement(geterUser);
+            prSt.setString(1, user.getLogin());
+            resSet = prSt.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return resSet;
+    }
+    public void insertUser(User user) {
+        String insertIngridient = "INSERT INTO users (login, password_, admin) VALUES(?, ?, ?)";
+        PreparedStatement prSt = null;
+        try {
+            prSt = getDBConnection().prepareStatement(insertIngridient);
+            prSt.setString(1, user.getLogin());
+            prSt.setString(2, user.getPassword());
+            prSt.setString(3, "no");
+            prSt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
+    public void updateUser(User user) {
+        String updateIngridient = "UPDATE users SET password_ = ? where login = ?";
+        PreparedStatement prSt = null;
+        try {
+            prSt = getDBConnection().prepareStatement(updateIngridient);
+            prSt.setString(1, user.getPassword());
+            prSt.setString(2, user.getLogin());
+
+            prSt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
     public ResultSet getIngridients() {
         String getIngridients = "SELECT * FROM `ingridients`";
         PreparedStatement prSt = null;
@@ -93,13 +131,14 @@ public class DataBase {
     }
 
     public void insertIngridientsDish(INgridDish iNgridDish) {
-        String insertIngridient = "INSERT INTO ingridients_dishes (ingridient_name, dish_id, count_) VALUES(?, ?, ?)";
+        String insertIngridient = "INSERT INTO ingridients_dishes (id, ingridient_name, dish_id, count_) VALUES(?, ?, ?)";
         PreparedStatement prSt = null;
         try {
             prSt = getDBConnection().prepareStatement(insertIngridient);
-            prSt.setString(1, iNgridDish.getIngridient_name());
-            prSt.setInt(2, iNgridDish.getDish_id());
-            prSt.setInt(3, iNgridDish.getCount());
+            prSt.setInt(1,iNgridDish.getId());
+            prSt.setString(2, iNgridDish.getIngridient_name());
+            prSt.setInt(3, iNgridDish.getDish_id());
+            prSt.setInt(4, iNgridDish.getCount());
             prSt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -284,6 +323,119 @@ public class DataBase {
             prSt.setString(1,client.getAddress());
             prSt.setString(2,client.getName());
             prSt.setInt(3,client.getInn());
+
+            prSt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public ResultSet getDishs(){
+        String getIngridients = "SELECT * FROM `dishs`";
+        PreparedStatement prSt = null;
+        try {
+            prSt = getDBConnection().prepareStatement(getIngridients);
+            resSet = prSt.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return resSet;
+    }
+
+    public void insertDish(Dish dish){
+        String insertClients = "INSERT INTO dishs (id, name) VALUES(?, ?)";
+        PreparedStatement prSt = null;
+        try {
+            prSt = getDBConnection().prepareStatement(insertClients);
+            prSt.setInt(1,dish.getId());
+            prSt.setString(2,dish.getName());
+            prSt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void deleatDish(Dish dish){
+        String insertClients = "Delete from dishs where id = ?";
+        PreparedStatement prSt = null;
+        try {
+            prSt = getDBConnection().prepareStatement(insertClients);
+            prSt.setInt(1,dish.getId());
+            prSt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void updateDish(Dish dish){
+        String insertClients = "UPDATE dishs SET name = ? where id = ?";
+        PreparedStatement prSt = null;
+        try {
+            prSt = getDBConnection().prepareStatement(insertClients);
+            prSt.setString(1,dish.getName());
+            prSt.setInt(2,dish.getId());
+
+            prSt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public ResultSet getEatings(){
+        String getIngridients = "SELECT * FROM `eatins`";
+        PreparedStatement prSt = null;
+        try {
+            prSt = getDBConnection().prepareStatement(getIngridients);
+            resSet = prSt.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return resSet;
+    }
+
+    public void insertEating(Eating eating){
+        String insertClients = "INSERT INTO eatins (id, table_id, inn, officiant_id, dish_id, date_, time_begin, time_end) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+        PreparedStatement prSt = null;
+        try {
+            prSt = getDBConnection().prepareStatement(insertClients);
+            prSt.setInt(1,eating.getId());
+            prSt.setInt(2,eating.getTable_id());
+            prSt.setInt(3,eating.getInn());
+            prSt.setInt(4,eating.getOfficiant_id());
+            prSt.setInt(5,eating.getDish_id());
+            prSt.setDate(6, Date.valueOf(eating.getDate_()));
+            prSt.setTime(7,Time.valueOf(eating.getTime_begin()));
+            prSt.setTime(8,Time.valueOf(eating.getTime_end()));
+
+            prSt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void deleatEating(Eating eating){
+        String insertClients = "Delete from eatins where id = ?";
+        PreparedStatement prSt = null;
+        try {
+            prSt = getDBConnection().prepareStatement(insertClients);
+            prSt.setInt(1,eating.getId());
+            prSt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void updateEating(Eating eating){
+        String insertClients = "UPDATE dishs SET table_id = ?, inn = ?, officiant_id = ?, dish_id = ?, date_ = ?, time_begin = ?, time_end = ? where id = ?";
+        PreparedStatement prSt = null;
+        try {
+            prSt = getDBConnection().prepareStatement(insertClients);
+
+            prSt.setInt(1,eating.getTable_id());
+            prSt.setInt(2,eating.getInn());
+            prSt.setInt(3,eating.getOfficiant_id());
+            prSt.setInt(4,eating.getDish_id());
+            prSt.setString(5,eating.getDate_());
+            prSt.setString(6,eating.getTime_begin());
+            prSt.setString(7,eating.getTime_end());
+            prSt.setInt(8,eating.getId());
 
             prSt.executeUpdate();
         } catch (SQLException e) {
