@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="350.0" prefWidth="283.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursov_project.IngridControler">
+   <children>
+      <TableView fx:id="ingridientTable" layoutX="28.0" layoutY="74.0" prefHeight="200.0" prefWidth="226.0">
+        <columns>
+          <TableColumn fx:id="nameColumn" prefWidth="75.0" text="name" />
+          <TableColumn fx:id="unitColumn" prefWidth="75.0" text="unit" />
+            <TableColumn fx:id="countColumn" prefWidth="75.0" text="count" />
+        </columns>
+      </TableView>
+      <Label layoutX="80.0" layoutY="14.0" prefHeight="35.0" prefWidth="122.0" text="Ingridients" textAlignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="addButon" layoutX="46.0" layoutY="279.0" mnemonicParsing="false" text="Add" />
+      <Button fx:id="deleatButton" layoutX="190.0" layoutY="279.0" mnemonicParsing="false" text="Deleat" />
+      <TextField fx:id="nameField" layoutX="28.0" layoutY="49.0" prefHeight="26.0" prefWidth="75.0" />
+      <TextField fx:id="unitField" layoutX="104.0" layoutY="49.0" prefHeight="26.0" prefWidth="75.0" />
+      <TextField fx:id="countField" layoutX="178.0" layoutY="49.0" prefHeight="26.0" prefWidth="75.0" />
+      <Button fx:id="toEatingsButton" layoutX="14.0" layoutY="311.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="64.0" text="toEatings" />
+      <Button fx:id="toIngridientsDishes" layoutX="197.0" layoutY="310.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" text="toIngridientsDishes" />
+      <Button fx:id="exitButton" layoutX="235.0" layoutY="14.0" mnemonicParsing="false" text="Exit" />
+      <Button fx:id="updateButton" layoutX="115.0" layoutY="279.0" mnemonicParsing="false" text="Update" />
+   </children>
+</AnchorPane>

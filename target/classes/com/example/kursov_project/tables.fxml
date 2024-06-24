@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<AnchorPane prefHeight="361.0" prefWidth="290.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursov_project.TablesController">
+   <children>
+      <Label layoutX="106.0" layoutY="14.0" text="Tables">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tablesTable" layoutX="40.0" layoutY="74.0" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="idCollum" prefWidth="96.20001602172852" text="id" />
+          <TableColumn fx:id="maxCountCollum" prefWidth="103.0" text="max_count_people" />
+        </columns>
+      </TableView>
+      <TextField fx:id="idField" layoutX="40.0" layoutY="49.0" prefHeight="26.0" prefWidth="98.0" />
+      <TextField fx:id="maxCountField" layoutX="140.0" layoutY="49.0" prefHeight="26.0" prefWidth="98.0" />
+      <Button fx:id="exitButton" layoutX="214.0" layoutY="14.0" mnemonicParsing="false" text="Exit" />
+      <Button fx:id="addButton" layoutX="40.0" layoutY="283.0" mnemonicParsing="false" text="Add" />
+      <Button fx:id="delateButton" layoutX="188.0" layoutY="283.0" mnemonicParsing="false" text="Delate" />
+      <Button fx:id="updateButton" layoutX="114.0" layoutY="283.0" mnemonicParsing="false" text="Update" />
+      <Button fx:id="toOfficiantButton" layoutX="8.0" layoutY="321.0" mnemonicParsing="false" text="toOfficiants" />
+      <Button fx:id="toClient" layoutX="217.0" layoutY="321.0" mnemonicParsing="false" text="toClients" />
+   </children>
+</AnchorPane>
