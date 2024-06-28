@@ -10,18 +10,16 @@ public class Eating {
     private int table_id;
     private int inn;
     private int officiant_id;
-    private int dish_id;
     private String date_;
     private String time_begin;
     private String time_end;
 
 
-    public Eating(int id, int table_id, int inn, int officiant_id, int dish_id, String date_, String time_begin, String time_end) {
+    public Eating(int id, int table_id, int inn, int officiant_id, String date_, String time_begin, String time_end) {
         this.id = id;
         this.table_id = table_id;
         this.inn = inn;
         this.officiant_id = officiant_id;
-        this.dish_id = dish_id;
         this.date_ = date_;
         this.time_begin = time_begin;
         this.time_end = time_end;
@@ -75,13 +73,7 @@ public class Eating {
         this.inn = inn;
     }
 
-    public int getDish_id() {
-        return dish_id;
-    }
 
-    public void setDish_id(int dish_id) {
-        this.dish_id = dish_id;
-    }
 
     public String getDate_() {
         return date_;

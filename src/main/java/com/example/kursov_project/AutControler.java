@@ -82,8 +82,7 @@ public class AutControler {
         if (button == authorization && authorize()) {// Попытка авторизации
             newWindow = "main.fxml";
             IngridControler.setUser(user);
-            user.setPassword("");
-            user.setLogin("");
+            user = new User();
         } else if (button == regButton) {
             newWindow = "regestation.fxml";
         } else {

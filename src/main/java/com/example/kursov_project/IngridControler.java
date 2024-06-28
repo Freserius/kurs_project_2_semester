@@ -80,7 +80,7 @@ public class IngridControler implements Initializable {
            Parent root;
            String newWindow = "eatings.fxml";
            EatingsControler.setUser(user);
-           stage = (Stage) toIngridientsDishes.getScene().getWindow(); // получаем окно этой кнопки
+           stage = (Stage) toEatingsButton.getScene().getWindow(); // получаем окно этой кнопки
            try {
                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(newWindow)));
            } catch (IOException e) {

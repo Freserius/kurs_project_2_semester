@@ -73,7 +73,9 @@ public class DishsController implements Initializable {
                     Dish dish = dishsTable.getSelectionModel().getSelectedItem();
                     bdHandler.deleatDish(dish);
                     data.remove(dish);
-                }catch (Exception e){}
+                }catch (Exception e){
+                    throw new RuntimeException(e);
+                }
 
             });
             updateButton.setOnAction(actionEvent -> {
@@ -110,8 +112,8 @@ public class DishsController implements Initializable {
         toEatingsButton.setOnAction(actionEvent -> {
             Stage stage;
             Parent root;
-            String newWindow = "eatings.fxml";
-            EatingsControler.setUser(user);
+            String newWindow = "dishEating.fxml";
+            DishEatingController.setUser(user);
             stage = (Stage) toClientsButton.getScene().getWindow(); // получаем окно этой кнопки
             try {
                 root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(newWindow)));

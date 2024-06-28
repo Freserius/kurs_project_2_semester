@@ -393,7 +393,7 @@ public class DataBase {
     }
 
     public void insertEating(Eating eating){
-        String insertClients = "INSERT INTO eatins (id, table_id, inn, officiant_id, dish_id, date_, time_begin, time_end) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+        String insertClients = "INSERT INTO eatins (id, table_id, inn, officiant_id, date_, time_begin, time_end) VALUES(?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement prSt = null;
         try {
             prSt = getDBConnection().prepareStatement(insertClients);
@@ -401,10 +401,9 @@ public class DataBase {
             prSt.setInt(2,eating.getTable_id());
             prSt.setInt(3,eating.getInn());
             prSt.setInt(4,eating.getOfficiant_id());
-            prSt.setInt(5,eating.getDish_id());
-            prSt.setDate(6, Date.valueOf(eating.getDate_()));
-            prSt.setTime(7,Time.valueOf(eating.getTime_begin()));
-            prSt.setTime(8,Time.valueOf(eating.getTime_end()));
+            prSt.setDate(5, Date.valueOf(eating.getDate_()));
+            prSt.setTime(6,Time.valueOf(eating.getTime_begin()));
+            prSt.setTime(7,Time.valueOf(eating.getTime_end()));
 
             prSt.executeUpdate();
         } catch (SQLException e) {
@@ -422,8 +421,60 @@ public class DataBase {
             throw new RuntimeException(e);
         }
     }
+    public ResultSet getDishEating(){
+        String getIngridients = "SELECT * FROM `dish_eating`";
+        PreparedStatement prSt = null;
+        try {
+            prSt = getDBConnection().prepareStatement(getIngridients);
+            resSet = prSt.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return resSet;
+    }
+    public void updateDishEating(dishEating eating){
+        String insertClients = "UPDATE dish_eating SET eating_id = ?, dish_id = ? where id = ?";
+        PreparedStatement prSt = null;
+        try {
+            prSt = getDBConnection().prepareStatement(insertClients);
+
+            prSt.setInt(1,eating.getEating_id());
+            prSt.setInt(2,eating.getDish_id());
+            prSt.setInt(3,eating.getId());
+
+            prSt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void insertDishEating(dishEating eating){
+        String insertClients = "INSERT INTO dish_eating (id, eating_id, dish_id) VALUES(?, ?, ?)";
+        PreparedStatement prSt = null;
+        try {
+            prSt = getDBConnection().prepareStatement(insertClients);
+            prSt.setInt(1,eating.getId());
+            prSt.setInt(2,eating.getEating_id());
+            prSt.setInt(3,eating.getDish_id());
+
+            prSt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void deleatDishEating(dishEating eating){
+        String insertClients = "Delete from dish_eating where id = ?";
+        PreparedStatement prSt = null;
+        try {
+            prSt = getDBConnection().prepareStatement(insertClients);
+            prSt.setInt(1,eating.getId());
+            prSt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
     public void updateEating(Eating eating){
-        String insertClients = "UPDATE dishs SET table_id = ?, inn = ?, officiant_id = ?, dish_id = ?, date_ = ?, time_begin = ?, time_end = ? where id = ?";
+        String insertClients = "UPDATE dishs SET table_id = ?, inn = ?, officiant_id = ?, date_ = ?, time_begin = ?, time_end = ? where id = ?";
         PreparedStatement prSt = null;
         try {
             prSt = getDBConnection().prepareStatement(insertClients);
@@ -431,11 +482,10 @@ public class DataBase {
             prSt.setInt(1,eating.getTable_id());
             prSt.setInt(2,eating.getInn());
             prSt.setInt(3,eating.getOfficiant_id());
-            prSt.setInt(4,eating.getDish_id());
-            prSt.setString(5,eating.getDate_());
-            prSt.setString(6,eating.getTime_begin());
-            prSt.setString(7,eating.getTime_end());
-            prSt.setInt(8,eating.getId());
+            prSt.setString(4,eating.getDate_());
+            prSt.setString(5,eating.getTime_begin());
+            prSt.setString(6,eating.getTime_end());
+            prSt.setInt(7,eating.getId());
 
             prSt.executeUpdate();
         } catch (SQLException e) {

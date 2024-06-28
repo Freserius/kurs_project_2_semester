@@ -53,8 +53,6 @@ public class EatingsControler implements Initializable {
     @FXML
     private TextField officiantIdField;
     @FXML
-    private TextField dishIdField;
-    @FXML
     private TextField dateField;
     @FXML
     private TextField timeBeginField;
@@ -83,7 +81,7 @@ public class EatingsControler implements Initializable {
         if (user.isAdmin()){
             addButton.setOnAction(actionEvent -> {
                 try {
-                    Eating eating = new Eating(Integer.parseInt(idField.getText()), Integer.parseInt(tableIdField.getText()), Integer.parseInt(innField.getText()), Integer.parseInt(officiantIdField.getText()), Integer.parseInt(dishIdField.getText()), dateField.getText(), timeBeginField.getText(), timeEndField.getText());
+                    Eating eating = new Eating(Integer.parseInt(idField.getText()), Integer.parseInt(tableIdField.getText()), Integer.parseInt(innField.getText()), Integer.parseInt(officiantIdField.getText()), dateField.getText(), timeBeginField.getText(), timeEndField.getText());
                     bdHandler.insertEating(eating);
                     data.add(eating);
                 }catch (Exception e){}
@@ -98,7 +96,7 @@ public class EatingsControler implements Initializable {
             });
             updateButton.setOnAction(actionEvent -> {
                 try {
-                    Eating eating = new Eating(Integer.parseInt(idField.getText()), Integer.parseInt(tableIdField.getText()), Integer.parseInt(innField.getText()), Integer.parseInt(officiantIdField.getText()), Integer.parseInt(dishIdField.getText()), dateField.getText(), timeBeginField.getText(), timeEndField.getText());
+                    Eating eating = new Eating(Integer.parseInt(idField.getText()), Integer.parseInt(tableIdField.getText()), Integer.parseInt(innField.getText()), Integer.parseInt(officiantIdField.getText()), dateField.getText(), timeBeginField.getText(), timeEndField.getText());
                     bdHandler.updateEating(eating);
                     data.set(data.indexOf(eatingsTable.getSelectionModel().getSelectedItem()), eating);
                 }catch (Exception e){}
@@ -113,7 +111,6 @@ public class EatingsControler implements Initializable {
             tableIdField.setDisable(!user.isAdmin());
             innField.setDisable(!user.isAdmin());
             officiantIdField.setDisable(!user.isAdmin());
-            dishIdField.setDisable(!user.isAdmin());
             dateField.setDisable(!user.isAdmin());
             timeBeginField.setDisable(!user.isAdmin());
             timeEndField.setDisable(!user.isAdmin());
@@ -137,8 +134,8 @@ public class EatingsControler implements Initializable {
         toDishsButton.setOnAction(actionEvent -> {
             Stage stage;
             Parent root;
-            String newWindow = "dishs.fxml";
-            DishsController.setUser(user);
+            String newWindow = "dishEating.fxml";
+            DishEatingController.setUser(user);
             stage = (Stage) toDishsButton.getScene().getWindow(); // получаем окно этой кнопки
             try {
                 root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(newWindow)));
@@ -168,8 +165,7 @@ public class EatingsControler implements Initializable {
         idColum.setCellValueFactory(new PropertyValueFactory<>("id"));
         tableIdColum.setCellValueFactory(new PropertyValueFactory<>("table_id"));
         innColum.setCellValueFactory(new PropertyValueFactory<>("inn"));
-        officiantIdColum.setCellValueFactory(new PropertyValueFactory<>("officiant_id "));
-        dishIdColum.setCellValueFactory(new PropertyValueFactory<>("dish_id"));
+        officiantIdColum.setCellValueFactory(new PropertyValueFactory<>("officiant_id"));
         dateColum.setCellValueFactory(new PropertyValueFactory<>("date_"));
         timeBeginColum.setCellValueFactory(new PropertyValueFactory<>("time_begin"));
         timeEndColum.setCellValueFactory(new PropertyValueFactory<>("time_end"));
@@ -184,10 +180,9 @@ public class EatingsControler implements Initializable {
                     ,ingrids.getInt(2)
                     ,ingrids.getInt(3)
                     ,ingrids.getInt(4)
-                    ,ingrids.getInt(5)
+                    ,ingrids.getString(5)
                     ,ingrids.getString(6)
-                    ,ingrids.getString(7)
-                    ,ingrids.getString(8));
+                    ,ingrids.getString(7));
             data.add(ingr);
         }
         } catch (SQLException e) {

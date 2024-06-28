@@ -4,17 +4,16 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="634.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursov_project.EatingsControler">
+<AnchorPane prefHeight="400.0" prefWidth="597.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursov_project.EatingsControler">
    <children>
-      <Button fx:id="toDishsButton" layoutX="40.0" layoutY="351.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="66.0" text="toDishs" />
+      <Button fx:id="toDishsButton" layoutX="40.0" layoutY="351.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="66.0" text="toDishEatings" />
       <Button fx:id="toIngridientsButton" layoutX="497.0" layoutY="351.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="66.0" text="toIngridints" />
-      <TableView fx:id="eatingsTable" layoutX="35.0" layoutY="100.0" prefHeight="200.0" prefWidth="605.0">
+      <TableView fx:id="eatingsTable" layoutX="35.0" layoutY="100.0" prefHeight="200.0" prefWidth="525.0">
         <columns>
             <TableColumn fx:id="idColum" prefWidth="75.0" text="id" />
           <TableColumn fx:id="tableIdColum" prefWidth="62.200016021728516" text="table_id" />
           <TableColumn fx:id="innColum" prefWidth="73.80001831054688" text="inn" />
-            <TableColumn fx:id="officiantIdColum" prefWidth="81.4000244140625" text="officiant_id " />
-            <TableColumn fx:id="dishIdColum" prefWidth="76.80000305175781" text="dish_id" />
+            <TableColumn fx:id="officiantIdColum" prefWidth="81.4000244140625" text="officiant_id" />
             <TableColumn fx:id="dateColum" prefWidth="67.0" text="date_" />
             <TableColumn fx:id="timeBeginColum" prefWidth="86.39999999999998" text="time_begin" />
             <TableColumn fx:id="timeEndColum" prefWidth="75.0" text="time_end" />
@@ -23,9 +22,8 @@
       <TextField fx:id="tableIdField" layoutX="109.0" layoutY="75.0" prefHeight="26.0" prefWidth="66.0" />
       <TextField fx:id="innField" layoutX="171.0" layoutY="75.0" prefHeight="26.0" prefWidth="74.0" />
       <TextField fx:id="officiantIdField" layoutX="244.0" layoutY="75.0" prefHeight="26.0" prefWidth="85.0" />
-      <TextField fx:id="dishIdField" layoutX="330.0" layoutY="75.0" prefHeight="26.0" prefWidth="79.0" />
-      <TextField fx:id="dateField" layoutX="409.0" layoutY="75.0" prefHeight="26.0" prefWidth="66.0" />
-      <TextField fx:id="timeBeginField" layoutX="475.0" layoutY="75.0" prefHeight="26.0" prefWidth="86.0" />
+      <TextField fx:id="dateField" layoutX="330.0" layoutY="75.0" prefHeight="26.0" prefWidth="66.0" />
+      <TextField fx:id="timeBeginField" layoutX="396.0" layoutY="75.0" prefHeight="26.0" prefWidth="86.0" />
       <Button fx:id="addButton" layoutX="142.0" layoutY="316.0" mnemonicParsing="false" text="Add" />
       <Button fx:id="delateButton" layoutX="404.0" layoutY="316.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="66.0" text="Deleta" />
       <Label layoutX="260.0" layoutY="33.0" prefHeight="35.0" prefWidth="79.0" text="Eatings">
@@ -33,7 +31,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="timeEndField" layoutX="560.0" layoutY="75.0" prefHeight="26.0" prefWidth="73.0" />
+      <TextField fx:id="timeEndField" layoutX="482.0" layoutY="75.0" prefHeight="26.0" prefWidth="73.0" />
       <Button fx:id="updateButton" layoutX="268.0" layoutY="316.0" mnemonicParsing="false" text="Update" />
       <Button fx:id="exitButton" layoutX="525.0" layoutY="21.0" mnemonicParsing="false" text="Exit" />
       <TextField fx:id="idField" layoutX="33.0" layoutY="75.0" prefHeight="26.0" prefWidth="79.0" />

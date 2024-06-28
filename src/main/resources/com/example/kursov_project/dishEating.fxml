@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="381.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursov_project.DishEatingController">
+   <children>
+      <TableView fx:id="dishEatongTable" layoutX="78.0" layoutY="100.0" prefHeight="200.0" prefWidth="227.0">
+        <columns>
+          <TableColumn fx:id="idColum" prefWidth="75.0" text="id" />
+            <TableColumn fx:id="dishIdColum" prefWidth="75.0" text="dish_id" />
+          <TableColumn fx:id="eatingIdColum" prefWidth="75.0" text="eating_id" />
+        </columns>
+      </TableView>
+      <TextField fx:id="idField" layoutX="78.0" layoutY="75.0" prefHeight="26.0" prefWidth="76.0" />
+      <TextField fx:id="eatingIdField" layoutX="225.0" layoutY="76.0" prefHeight="26.0" prefWidth="83.0" />
+      <TextField fx:id="dishIdField" layoutX="152.0" layoutY="76.0" prefHeight="26.0" prefWidth="76.0" />
+      <Button fx:id="updateButton" layoutX="166.0" layoutY="310.0" mnemonicParsing="false" text="Update" />
+      <Button fx:id="addButton" layoutX="78.0" layoutY="310.0" mnemonicParsing="false" text="Add" />
+      <Button fx:id="delateButton" layoutX="254.0" layoutY="310.0" mnemonicParsing="false" text="Delate" />
+      <Button fx:id="toDishButton" layoutX="14.0" layoutY="350.0" mnemonicParsing="false" text="toDishs" />
+      <Button fx:id="toEatingButton" layoutX="306.0" layoutY="350.0" mnemonicParsing="false" text="toEatings" />
+      <Button fx:id="exitButton" layoutX="306.0" layoutY="23.0" mnemonicParsing="false" text="Exit" />
+      <Label layoutX="130.0" layoutY="27.0" text="DishEating">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
